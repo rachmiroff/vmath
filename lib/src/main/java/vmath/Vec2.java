@@ -11,6 +11,10 @@ public class Vec2 {
     }
 
     public Vec2(float x, float y) {
+        if (Float.isNaN(x) || Float.isNaN(y)) {
+            throw new ArithmeticException();
+        }
+
         this.x = x;
         this.y = y;
     }
