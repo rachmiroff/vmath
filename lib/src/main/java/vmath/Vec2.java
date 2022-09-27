@@ -45,7 +45,7 @@ public class Vec2 {
     }
 
     public Vec2 mul(float scalar) {
-        return new Vec2(); // TODO
+        return new Vec2(x * scalar, y * scalar);
     }
 
     public float dot(Vec2 other) {
