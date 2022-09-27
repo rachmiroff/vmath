@@ -49,7 +49,7 @@ public class Vec2 {
     }
 
     public float dot(Vec2 other) {
-        return 0.0f; // TODO
+        return x * other.x + y * other.y;
     }
 
     public String toString() {
