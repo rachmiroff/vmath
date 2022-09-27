@@ -53,6 +53,6 @@ public class Vec2 {
     }
 
     public String toString() {
-        return ""; // TODO
+        return "(" + x + ", " + y + ")";
     }
 }
