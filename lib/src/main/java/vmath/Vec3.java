@@ -8,6 +8,10 @@ public class Vec3 {
     }
 
     public Vec3(float x, float y, float z) {
+        if (Float.isNaN(x) || Float.isNaN(y) || Float.isNaN(z)) {
+            throw new ArithmeticException();
+        }
+
         this.x = x;
         this.y = y;
         this.z = z;
