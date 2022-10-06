@@ -8,19 +8,21 @@ public class Vec3 {
     }
 
     public Vec3(float x, float y, float z) {
-        // TODO
+        this.x = x;
+        this.y = y;
+        this.z = z;
     }
 
     public float x() {
-        return 0.0f; // TODO
+        return x;
     }
 
     public float y() {
-        return 0.0f; // TODO
+        return y;
     }
 
     public float z() {
-        return 0.0f; // TODO
+        return z;
     }
 
     public float mag() {
