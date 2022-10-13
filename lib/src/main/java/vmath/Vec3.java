@@ -39,7 +39,7 @@ public class Vec3 {
     }
 
     public Vec3 add(Vec3 other) {
-        return null; // TODO
+        return new Vec3(x + other.x, y + other.y, z + other.z);
     }
 
     public Vec3 sub(Vec3 other) {
