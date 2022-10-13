@@ -30,12 +30,12 @@ public class Vec3 {
     }
 
     public float mag() {
-        return (float) Math.sqrt(x * x + y * y + z * z);
+        return (float) Math.sqrt(x*x + y*y + z*z);
     }
 
     public Vec3 norm() {
         float mag = mag();
-        return new Vec3(x / mag, y / mag, z / mag);
+        return new Vec3(x/mag, y/mag, z/mag);
     }
 
     public Vec3 add(Vec3 other) {
@@ -47,11 +47,11 @@ public class Vec3 {
     }
 
     public Vec3 mul(float scalar) {
-        return new Vec3(x * scalar, y * scalar, z * scalar);
+        return new Vec3(x*scalar, y*scalar, z*scalar);
     }
 
     public float dot(Vec3 other) {
-        return x * other.x + y * other.y + z * other.z;
+        return x*other.x + y*other.y + z*other.z;
     }
 
     public String toString() {

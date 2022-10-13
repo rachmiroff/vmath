@@ -25,12 +25,12 @@ public class Vec2 {
     }
 
     public float mag() {
-        return (float) Math.sqrt(x * x + y * y);
+        return (float) Math.sqrt(x*x + y*y);
     }
 
     public Vec2 norm() {
         float mag = mag();
-        return new Vec2(x / mag, y / mag);
+        return new Vec2(x/mag, y/mag);
     }
 
     public Vec2 add(Vec2 other) {
@@ -42,11 +42,11 @@ public class Vec2 {
     }
 
     public Vec2 mul(float scalar) {
-        return new Vec2(x * scalar, y * scalar);
+        return new Vec2(x*scalar, y*scalar);
     }
 
     public float dot(Vec2 other) {
-        return x * other.x + y * other.y;
+        return x*other.x + y*other.y;
     }
 
     public String toString() {
