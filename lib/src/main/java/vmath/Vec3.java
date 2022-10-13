@@ -34,8 +34,8 @@ public class Vec3 {
     }
 
     public Vec3 norm() {
-        float mag = mag();
-        return new Vec3(x / mag, y / mag, z / mag);
+        float norm = 1.0f / mag();
+        return new Vec3(x * norm, y * norm, z * norm);
     }
 
     public Vec3 add(Vec3 other) {
