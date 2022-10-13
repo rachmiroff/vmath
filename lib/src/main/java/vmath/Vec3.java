@@ -1,7 +1,7 @@
 package vmath;
 
 public class Vec3 {
-    private float x, y, z;
+    private final float x, y, z;
 
     public Vec3() {
         this(0.0f, 0.0f, 0.0f);

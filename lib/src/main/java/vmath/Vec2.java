@@ -4,7 +4,7 @@
 package vmath;
 
 public class Vec2 {
-    private float x, y;
+    private final float x, y;
 
     public Vec2() {
         this(0.0f, 0.0f);
