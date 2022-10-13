@@ -30,7 +30,7 @@ public class Vec3 {
     }
 
     public float mag() {
-        return 0.0f; // TODO
+        return (float) Math.sqrt(x * x + y * y + z * z);
     }
 
     public Vec3 norm() {
