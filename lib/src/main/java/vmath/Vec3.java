@@ -51,7 +51,7 @@ public class Vec3 {
     }
 
     public float dot(Vec3 other) {
-        return 0.0f; // TODO
+        return x * other.x + y * other.y + z * other.z;
     }
 
     public String toString() {
