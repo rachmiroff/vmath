@@ -55,7 +55,11 @@ public class Vec3 {
     }
 
     public Vec3 cross(Vec3 other) {
-        return null;
+        return new Vec3(
+            y * other.z() - z * other.y(),
+            z * other.x() - x * other.z(),
+            x * other.y() - y * other.x()
+        );
     }
 
     public String toString() {
