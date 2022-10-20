@@ -8,54 +8,58 @@ public class Vec4 {
     }
 
     public Vec4(float x, float y, float z, float w) {
-        // TODO
-        this.x = 0.0f;
-        this.y = 0.0f;
-        this.z = 0.0f;
-        this.w = 0.0f;
+        if (Float.isNaN(x) || Float.isNaN(y) || Float.isNaN(z) || Float.isNaN(w)) {
+            throw new ArithmeticException();
+        }
+
+        this.x = x;
+        this.y = y;
+        this.z = z;
+        this.w = w;
     }
 
     public float x() {
-        return 0.0f; // TODO
+        return x;
     }
 
     public float y() {
-        return 0.0f; // TODO
+        return y;
     }
 
     public float z() {
-        return 0.0f; // TODO
+        return z;
     }
 
     public float w() {
-        return 0.0f; // TODO
+        return w;
     }
 
     public float mag() {
-        return 0.0f; // TODO
+        return (float) Math.sqrt(x*x + y*y + z*z + w*w);
     }
 
     public Vec4 norm() {
-        return null; // TODO
+        float norm = 1.0f/mag();
+        return new Vec4(x*norm, y*norm, z*norm, w*norm);
     }
 
     public Vec4 add(Vec4 other) {
-        return null; // TODO
+        return new Vec4(x + other.x, y + other.y, z + other.z, w + other.w);
     }
 
     public Vec4 sub(Vec4 other) {
-        return null; // TODO
+        return new Vec4(x - other.x, y - other.y, z - other.z, w - other.w);
     }
 
     public Vec4 mul(float scalar) {
-        return null; // TODO
+        return new Vec4(x*scalar, y*scalar, z*scalar, w*scalar);
     }
 
     public float dot(Vec4 other) {
-        return 0.0f; // TODO
+        return x*other.x + y*other.y + z*other.z + w*other.w;
     }
 
     public String toString() {
-        return ""; // TODO
+        return "(" + x + ", " + y + ", " + z + ", " + w + ")";
     }
 }
