@@ -129,6 +129,16 @@ class Vec3Test {
     }
 
     @Test
+    void calculates_cross_product_for_vectors() {
+        var v1 = new Vec3(1.0f, 2.0f, 3.0f);
+        var v2 = new Vec3(2.0f, 3.0f, 4.0f);
+        Vec3 cross = v1.cross(v2);
+        assertEquals(cross.x(), -1.0f);
+        assertEquals(cross.y(), 2.0f);
+        assertEquals(cross.z(), -1.0f);
+    }
+
+    @Test
     void converts_zero_vector_to_string() {
         var v1 = new Vec3();
         assertEquals(v1.toString(), "(0.0, 0.0, 0.0)");
