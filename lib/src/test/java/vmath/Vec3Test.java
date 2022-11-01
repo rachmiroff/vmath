@@ -52,6 +52,18 @@ class Vec3Test {
     }
 
     @Test
+    void calculates_zero_vector_squared_magnitude() {
+        var v = new Vec3(0.0f, 0.0f, 0.0f);
+        assertEquals(v.sqrdMag(), 0.0f);
+    }
+
+    @Test
+    void calculates_nonzero_vector_squared_mag() {
+        var v = new Vec3(1.0f, 1.0f, 1.0f);
+        assertEquals(v.sqrdMag(), 3.0f);
+    }
+
+    @Test
     void normalizes_nonzero_vector() {
         var v = new Vec3(0.0f, 10.0f, 0.0f).norm();
         assertEquals(v.x(), 0.0f);
