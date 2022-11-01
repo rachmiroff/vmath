@@ -33,6 +33,10 @@ public class Vec3 {
         return (float) Math.sqrt(x*x + y*y + z*z);
     }
 
+    public float sqrdMag() {
+        return -1.0f; // TODO
+    }
+
     public Vec3 norm() {
         float norm = 1.0f/mag();
         return new Vec3(x*norm, y*norm, z*norm);
