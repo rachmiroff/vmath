@@ -39,7 +39,7 @@ public class Vec4 {
     }
 
     public float sqrdMag() {
-        return -1.0f; // TODO
+        return x*x + y*y + z*z + w*w;
     }
 
     public Vec4 norm() {
