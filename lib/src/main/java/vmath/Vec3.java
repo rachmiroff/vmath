@@ -66,6 +66,14 @@ public class Vec3 {
         );
     }
 
+    public Vec3 lerp(Vec3 other, float alpha) {
+        return new Vec3(
+            x*(1.0f - alpha) + other.x()*alpha,
+            y*(1.0f - alpha) + other.y()*alpha,
+            z*(1.0f - alpha) + other.z()*alpha
+        );
+    }
+
     public String toString() {
         return "(" + x + ", " + y + ", " + z + ")";
     }
