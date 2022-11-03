@@ -54,8 +54,10 @@ public class Vec2 {
     }
 
 	public Vec2 lerp(Vec2 other, float alpha) {
-		// TODO
-		return null;
+		return new Vec2(
+			x*(1.0f - alpha) + other.x()*alpha,
+			y*(1.0f - alpha) + other.y()*alpha
+		);
 	}
 
     public String toString() {
