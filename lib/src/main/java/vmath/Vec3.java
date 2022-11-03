@@ -66,6 +66,10 @@ public class Vec3 {
         );
     }
 
+    public Vec3 lerp(Vec3 other, float alpha) {
+        return null; // TODO
+    }
+
     public String toString() {
         return "(" + x + ", " + y + ", " + z + ")";
     }
