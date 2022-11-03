@@ -53,6 +53,13 @@ public class Vec2 {
         return x*other.x + y*other.y;
     }
 
+    public Vec2 lerp(Vec2 other, float alpha) {
+        return new Vec2(
+            x*(1.0f - alpha) + other.x()*alpha,
+            y*(1.0f - alpha) + other.y()*alpha
+        );
+    }
+
     public String toString() {
         return "(" + x + ", " + y + ")";
     }

@@ -128,6 +128,16 @@ class Vec2Test {
     }
 
     @Test
+    void linearly_interpolates_two_vectors() {
+        var v1 = new Vec2(1.0f, 2.0f);
+        var v2 = new Vec2(2.0f, 3.0f);
+        float alpha = 0.5f;
+        var v3 = v1.lerp(v2, alpha);
+        assertEquals(v3.x(), 1.5f);
+        assertEquals(v3.y(), 2.5f);
+    }
+
+    @Test
     void converts_zero_vector_to_string() {
         var v1 = new Vec2();
         assertEquals(v1.toString(), "(0.0, 0.0)");
