@@ -164,7 +164,7 @@ class Vec4Test {
         assertEquals(lerped.x(), 1.5f);
         assertEquals(lerped.y(), 2.5f);
         assertEquals(lerped.z(), 3.5f);
-        assertEquals(lerped.z(), 4.5f);
+        assertEquals(lerped.w(), 4.5f);
     }
 
     @Test

@@ -64,7 +64,12 @@ public class Vec4 {
     }
 
     public Vec4 lerp(Vec4 other, float alpha) {
-        return null;
+        return new Vec4(
+            x*(1.0f - alpha) + other.x()*alpha,
+            y*(1.0f - alpha) + other.y()*alpha,
+            z*(1.0f - alpha) + other.z()*alpha,
+            w*(1.0f - alpha) + other.w()*alpha
+        );
     }
 
     public String toString() {
