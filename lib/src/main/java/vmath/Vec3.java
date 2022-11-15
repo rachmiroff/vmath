@@ -34,7 +34,7 @@ public class Vec3 {
     }
 
     public float sqrdMag() {
-        return -1.0f;
+        return x*x + y*y + z*z;
     }
 
     public Vec3 norm() {
