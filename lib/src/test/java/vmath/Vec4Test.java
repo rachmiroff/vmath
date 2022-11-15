@@ -156,6 +156,18 @@ class Vec4Test {
     }
 
     @Test
+    void linearly_interpolates_two_vectors() {
+        var v1 = new Vec4(1.0f, 2.0f, 3.0f, 4.0f);
+        var v2 = new Vec4(2.0f, 3.0f, 4.0f, 5.0f);
+        float alpha = 0.5f;
+        Vec4 lerped = v1.lerp(v2, alpha);
+        assertEquals(lerped.x(), 1.5f);
+        assertEquals(lerped.y(), 2.5f);
+        assertEquals(lerped.z(), 3.5f);
+        assertEquals(lerped.z(), 4.5f);
+    }
+
+    @Test
     void converts_zero_vector_to_string() {
         var v1 = new Vec4();
         assertEquals(v1.toString(), "(0.0, 0.0, 0.0, 0.0)");

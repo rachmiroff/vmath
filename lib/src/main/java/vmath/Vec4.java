@@ -63,6 +63,10 @@ public class Vec4 {
         return x*other.x + y*other.y + z*other.z + w*other.w;
     }
 
+    public Vec4 lerp(Vec4 other, float alpha) {
+        return null;
+    }
+
     public String toString() {
         return "(" + x + ", " + y + ", " + z + ", " + w + ")";
     }
