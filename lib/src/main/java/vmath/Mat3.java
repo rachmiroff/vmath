@@ -4,6 +4,7 @@ public class Mat3 {
     private float[] m;
 
     public Mat3() {
+        m = new float[9];
     }
 
     public Mat3(
@@ -13,5 +14,9 @@ public class Mat3 {
     }
 
     public Mat3(float arr[]) {
+    }
+
+    public float get(int i, int j) {
+        return m[i * 3 + j];
     }
 }
