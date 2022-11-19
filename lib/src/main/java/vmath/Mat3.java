@@ -24,6 +24,18 @@ public class Mat3 {
     }
 
     public Mat3(float arr[]) {
+        if (arr == null || arr.length != 9) {
+            throw new IllegalArgumentException();
+        }
+        for (float i : arr) {
+            if (Float.isNaN(i)) {
+                throw new ArithmeticException();
+            }
+        }
+        m = new float[9];
+        for (int i = 0; i < m.length; i++) {
+            m[i] = arr[i];
+        }
     }
 
     public float get(int i, int j) {
