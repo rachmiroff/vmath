@@ -82,7 +82,7 @@ class Mat3Test {
     }
 
     @Test
-    void fails_to_create_new_matrix_with_array_with_nan() {
+    void fails_to_create_new_matrix_with_array_containing_nan() {
         float[] array = {
                 Float.NaN, Float.NaN, Float.NaN,
                 Float.NaN, Float.NaN, Float.NaN,
