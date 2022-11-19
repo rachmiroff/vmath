@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 public class Mat2Test {
   @Test
-  void creates_new_zero_matrix() {
+  void creates_new_identity_matrix() {
     var m = new Mat2();
     assertEquals(m.get(0, 0), 0.0f);
     assertEquals(m.get(0, 1), 0.0f);
