@@ -18,6 +18,13 @@ public class Mat2 {
         m[3] = m11;
     }
 
+    public Mat2(float[] arr) {
+        if (arr == null || arr.length != 4) {
+            throw new IllegalArgumentException();
+        }
+        m = arr;
+    }
+
     public float get(int i, int j) {
         return m[(i * 2) + j];
     }
