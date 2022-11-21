@@ -32,10 +32,7 @@ public class Mat3 {
                 throw new ArithmeticException();
             }
         }
-        m = new float[9];
-        for (int i = 0; i < m.length; i++) {
-            m[i] = arr[i];
-        }
+        m = arr.clone();
     }
 
     public float get(int i, int j) {
