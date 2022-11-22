@@ -129,4 +129,24 @@ class Mat3Test {
         assertEquals(7.0f, m.get(2, 1));
         assertEquals(8.0f, m.get(2, 2));
     }
+
+
+    @Test
+    void converts_matrix_to_array_of_floats() {
+        float[] array = {
+            0.0f, 1.0f, 2.0f,
+            3.0f, 4.0f, 5.0f,
+            6.0f, 7.0f, 8.0f
+        };
+        var m = new Mat3(array);
+        var arr = m.toArray();
+        // assert that the same array is returned
+        for (int i = 0; i < array.length; i++) {
+                assertEquals(array[i], arr[i]);
+        }
+        // check if the underlying array can not be mutated by mutating the returned
+        // array
+        arr[0] = 10;
+        assertEquals(0.0f, m.toArray()[0]);
+    }
 }
