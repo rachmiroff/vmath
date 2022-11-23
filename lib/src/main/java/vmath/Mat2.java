@@ -1,31 +1,45 @@
 package vmath;
 
 public class Mat2 {
-    private float[] m;
+    private final float[] m;
 
     public Mat2() {
-        m = new float[4];
+        m = new float[] {
+            1.0f, 0.0f,
+            0.0f, 1.0f
+        };
     }
 
     public Mat2(float m00, float m01, float m10, float m11) {
-        if (Float.isNaN(m00) || Float.isNaN(m01) || Float.isNaN(m10) || Float.isNaN(m11)) {
-            throw new ArithmeticException();
+        var vals = new float[] {
+            m00, m01,
+            m10, m11
+        };
+
+        for (float val : vals) {
+            if (Float.isNaN(val)) {
+                throw new ArithmeticException();
+            }
         }
-        m = new float[4];
-        m[0] = m00;
-        m[1] = m01;
-        m[2] = m10;
-        m[3] = m11;
+
+        m = vals;
     }
 
-    public Mat2(float[] arr) {
-        if (arr == null || arr.length != 4) {
+    public Mat2(float[] vals) {
+        if (vals == null || vals.length != 4) {
             throw new IllegalArgumentException();
         }
-        m = arr;
+
+        for (float val : vals) {
+            if (Float.isNaN(val)) {
+                throw new ArithmeticException();
+            }
+        }
+
+        m = vals.clone();
     }
 
     public float get(int i, int j) {
-        return m[(i * 2) + j];
+        return m[i * 2 + j];
     }
 }
