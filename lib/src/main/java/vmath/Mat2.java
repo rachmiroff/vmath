@@ -42,4 +42,9 @@ public class Mat2 {
     public float get(int i, int j) {
         return m[i * 2 + j];
     }
+
+    public Mat2 Mat2toString(float[] a){
+    String str = String.valueOf(a[1]) +" "+ aString.valueOf( [2]) +'\n'+String.valueOf(a[3]) +" "+ String.valueOf(a[4]);
+    return str;
+    }
 }

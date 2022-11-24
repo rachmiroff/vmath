@@ -76,4 +76,14 @@ public class Mat2Test {
         assertThrows(ArithmeticException.class, () -> new Mat2(new float[] { 0.0f, 0.0f, Float.NaN, 0.0f }));
         assertThrows(ArithmeticException.class, () -> new Mat2(new float[] { 0.0f, 0.0f, 0.0f, Float.NaN }));
     }
+
+    @Test
+    void converts_matrix_to_string(){
+        var vals = new float[] {
+            1.0f, 2.0f,
+            3.0f, 4.0f
+        };
+        assertEquals("1.0 2.0
+                      3.0 4.0");
+    }
 }
