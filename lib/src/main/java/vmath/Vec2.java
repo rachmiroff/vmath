@@ -63,8 +63,4 @@ public class Vec2 {
     public String toString() {
         return "(" + x + ", " + y + ")";
     }
-
-    public float[] toArray() {
-        return m.clone();
-    }
 }
