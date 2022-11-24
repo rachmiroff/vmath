@@ -51,4 +51,21 @@ public class Mat4 {
     public float get(int i, int j) {
         return m[i * 4 + j];
     }
+
+    public Vec4 mul(Vec4 other) {
+        float[] result = new float[4];
+        
+        for (int i = 0, row = 0; i <= 12; i+=4, row++) {
+            float sum = 0.0f;
+
+            sum += m[i] * other.x();
+            sum += m[i+1] * other.y();
+            sum += m[i+2] * other.z();
+            sum += m[i+3] * other.w();
+
+            result[row] = sum;
+        }
+
+        return new Vec4(result[0], result[1], result[2], result[3]);
+    }
 }
