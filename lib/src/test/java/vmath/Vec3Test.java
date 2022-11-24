@@ -52,6 +52,18 @@ class Vec3Test {
     }
 
     @Test
+    void calculates_zero_vector_squared_magnitude() {
+        var v = new Vec3(0.0f, 0.0f, 0.0f);
+        assertEquals(v.sqrdMag(), 0.0f);
+    }
+
+    @Test
+    void calculates_nonzero_vector_squared_mag() {
+        var v = new Vec3(1.0f, 1.0f, 1.0f);
+        assertEquals(v.sqrdMag(), 3.0f);
+    }
+
+    @Test
     void normalizes_nonzero_vector() {
         var v = new Vec3(0.0f, 10.0f, 0.0f).norm();
         assertEquals(v.x(), 0.0f);
@@ -136,6 +148,17 @@ class Vec3Test {
         assertEquals(cross.x(), -1.0f);
         assertEquals(cross.y(), 2.0f);
         assertEquals(cross.z(), -1.0f);
+    }
+
+    @Test
+    void linearly_interpolates_two_vectors() {
+        var v1 = new Vec3(1.0f, 2.0f, 3.0f);
+        var v2 = new Vec3(2.0f, 3.0f, 4.0f);
+        float alpha = 0.5f;
+        Vec3 lerped = v1.lerp(v2, alpha);
+        assertEquals(lerped.x(), 1.5f);
+        assertEquals(lerped.y(), 2.5f);
+        assertEquals(lerped.z(), 3.5f);
     }
 
     @Test

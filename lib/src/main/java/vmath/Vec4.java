@@ -38,6 +38,10 @@ public class Vec4 {
         return (float) Math.sqrt(x*x + y*y + z*z + w*w);
     }
 
+    public float sqrdMag() {
+        return x*x + y*y + z*z + w*w;
+    }
+
     public Vec4 norm() {
         float norm = 1.0f/mag();
         return new Vec4(x*norm, y*norm, z*norm, w*norm);
