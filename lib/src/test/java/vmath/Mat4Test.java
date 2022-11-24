@@ -144,7 +144,10 @@ public class Mat4Test {
 
         Vec4 answer = m4.mul(v4);
 
-        assertEquals(new Vec4(16.0f, 16.0f, 16.0f, 19.0f), answer);
+        assertEquals(answer.x(), 16.0f);
+        assertEquals(answer.y(), 16.0f);
+        assertEquals(answer.z(), 16.0f);
+        assertEquals(answer.w(), 16.0f);
     }
 
     @Test
@@ -159,6 +162,9 @@ public class Mat4Test {
 
         Vec4 answer = m4.mul(v4);
 
-        assertEquals(new Vec4(0.0f, 0.0f, 0.0f, 0.0f), answer);
+        assertEquals(answer.x(), 0.0f);
+        assertEquals(answer.y(), 0.0f);
+        assertEquals(answer.z(), 0.0f);
+        assertEquals(answer.w(), 0.0f);
     }
 }
