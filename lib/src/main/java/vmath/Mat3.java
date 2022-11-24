@@ -48,4 +48,20 @@ public class Mat3 {
     public float get(int i, int j) {
         return m[i * 3 + j];
     }
+
+    public Mat3 mul(Mat3 other){
+        return new Mat3(
+            (m[0 * 3 + 0] * other.m[0 * 3 + 0]) + (m[0 * 3 + 1] * other.m[1 * 3 + 0]) + (m[0 * 3 + 2] * other.m[2 * 3 + 0]),
+            (m[0 * 3 + 0] * other.m[0 * 3 + 1]) + (m[0 * 3 + 1] * other.m[1 * 3 + 1]) + (m[0 * 3 + 2] * other.m[2 * 3 + 1]),
+            (m[0 * 3 + 0] * other.m[0 * 3 + 2]) + (m[0 * 3 + 1] * other.m[1 * 3 + 2]) + (m[0 * 3 + 2] * other.m[2 * 3 + 2]),
+
+            (m[1 * 3 + 0] * other.m[0 * 3 + 0]) + (m[1 * 3 + 1] * other.m[1 * 3 + 0]) + (m[1 * 3 + 2] * other.m[2 * 3 + 0]),
+            (m[1 * 3 + 0] * other.m[0 * 3 + 1]) + (m[1 * 3 + 1] * other.m[1 * 3 + 1]) + (m[1 * 3 + 2] * other.m[2 * 3 + 1]),
+            (m[1 * 3 + 0] * other.m[0 * 3 + 2]) + (m[1 * 3 + 1] * other.m[1 * 3 + 2]) + (m[1 * 3 + 2] * other.m[2 * 3 + 2]),
+
+            (m[2 * 3 + 0] * other.m[0 * 3 + 0]) + (m[2 * 3 + 1] * other.m[1 * 3 + 0]) + (m[2 * 3 + 2] * other.m[2 * 3 + 0]),
+            (m[2 * 3 + 0] * other.m[0 * 3 + 1]) + (m[2 * 3 + 1] * other.m[1 * 3 + 1]) + (m[2 * 3 + 2] * other.m[2 * 3 + 1]),
+            (m[2 * 3 + 0] * other.m[0 * 3 + 2]) + (m[2 * 3 + 1] * other.m[1 * 3 + 2]) + (m[2 * 3 + 2] * other.m[2 * 3 + 2])
+        );
+    }
 }
