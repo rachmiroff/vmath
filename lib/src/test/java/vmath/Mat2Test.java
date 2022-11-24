@@ -83,7 +83,14 @@ public class Mat2Test {
             1.0f, 2.0f,
             3.0f, 4.0f
         };
-        assertEquals("1.0 2.0
-                      3.0 4.0");
+        var m = new Mat2(vals);
+        assertEquals(m.Mat2toString, "1.0 2.0"+"\n"+"3.0 4.0");
+    
+        var vals2 = new float[] {
+            0.0f, 1.0f,
+            3.0f, 2.0f
+        };
+        var m2 = new Mat2(vals);
+        assertEquals(m.Mat2toString, "0.0 1.0"+"\n"+"3.0 2.0");
     }
 }

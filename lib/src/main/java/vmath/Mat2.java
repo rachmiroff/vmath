@@ -34,7 +34,7 @@ public class Mat2 {
             if (Float.isNaN(val)) {
                 throw new ArithmeticException();
             }
-        }
+        
 
         m = vals.clone();
     }
@@ -44,7 +44,7 @@ public class Mat2 {
     }
 
     public Mat2 Mat2toString(float[] a){
-    String str = String.valueOf(a[1]) +" "+ aString.valueOf( [2]) +'\n'+String.valueOf(a[3]) +" "+ String.valueOf(a[4]);
+    String str = String.valueOf(a[0]) +" "+ String.valueOf(a[1]) +"\n"+String.valueOf(a[2]) +" "+ String.valueOf(a[3]);
     return str;
     }
 }
