@@ -131,4 +131,34 @@ public class Mat4Test {
             assertThrows(ArithmeticException.class, () -> new Mat4(vals));
         }
     }
+
+    @Test
+    void multiply_vector4_by_matrix4() {
+        Vec4 v4 = new Vec4(1.0f, 2.0f, 3.0f, 4.0f);
+        Mat4 m4 = new Mat4(new float[]{
+            1.0f, 2.0f, 1.0f, 2.0f,
+            1.0f, 2.0f, 1.0f, 2.0f,
+            1.0f, 2.0f, 1.0f, 2.0f,
+            1.0f, 2.0f, 1.0f, 2.0f,
+        });
+
+        Vec4 answer = m4.mul(v4);
+
+        assertEquals(new Vec4(16.0f, 16.0f, 16.0f, 19.0f), answer);
+    }
+
+    @Test
+    void multiply_zero_vector4_by_matrix4() {
+        Vec4 v4 = new Vec4(0.0f, 0.0f, 0.0f, 0.0f);
+        Mat4 m4 = new Mat4(new float[]{
+            1.0f, 2.0f, 1.0f, 2.0f,
+            1.0f, 2.0f, 1.0f, 2.0f,
+            1.0f, 2.0f, 1.0f, 2.0f,
+            1.0f, 2.0f, 1.0f, 2.0f,
+        });
+
+        Vec4 answer = m4.mul(v4);
+
+        assertEquals(new Vec4(0.0f, 0.0f, 0.0f, 0.0f), answer);
+    }
 }
