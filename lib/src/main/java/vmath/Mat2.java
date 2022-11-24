@@ -42,4 +42,13 @@ public class Mat2 {
     public float get(int i, int j) {
         return m[i * 2 + j];
     }
+
+    public Mat2 mul(Mat2 other) {
+        return new Mat2(
+        get(0, 0) * other.get(0, 0) + get(0, 1) * other.get(1, 0),
+        get(0, 0) * other.get(0, 1) + get(0, 1) * other.get(1, 1),
+        get(1, 0) * other.get(0, 0) + get(1, 1) * other.get(1, 0),
+        get(1, 0) * other.get(0, 1) + get(1, 1) * other.get(1, 1)
+        );
+    }
 }
