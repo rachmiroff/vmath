@@ -103,4 +103,52 @@ public class Mat3Test {
             assertThrows(ArithmeticException.class, () -> new Mat3(vals));
         }
     }
+
+    @Test
+    void multiplication_of_two_matrices() {
+        var val1 = new Mat3(
+            1.0f,  2.0f,  3.0f,
+            4.0f,  5.0f,  6.0f,
+            7.0f,  8.0f,  9.0f
+        );
+        var val2 = new Mat3(
+            1.0f,  2.0f,  3.0f,
+            4.0f,  5.0f,  6.0f,
+            7.0f,  8.0f,  9.0f
+        );
+        var val3 = new Mat3(
+            1.0f,  2.0f,  3.0f,
+            3.0f,  2.0f,  1.0f,
+            2.0f,  3.0f,  1.0f
+        );
+
+        var m = val1.mul(val2);
+
+        assertEquals(m.get(0, 0), 30.0f);
+        assertEquals(m.get(0, 1), 36.0f);
+        assertEquals(m.get(0, 2), 42.0f);
+
+        assertEquals(m.get(1, 0), 66.0f);
+        assertEquals(m.get(1, 1), 81.0f);
+        assertEquals(m.get(1, 2), 96.0f);
+
+        assertEquals(m.get(2, 0), 102.0f);
+        assertEquals(m.get(2, 1), 126.0f);
+        assertEquals(m.get(2, 2), 150.0f);
+
+        var m1 = val1.mul(val3);
+
+        assertEquals(m1.get(0, 0), 13.0f);
+        assertEquals(m1.get(0, 1), 15.0f);
+        assertEquals(m1.get(0, 2), 8.0f);
+
+        assertEquals(m1.get(1, 0), 31.0f);
+        assertEquals(m1.get(1, 1), 36.0f);
+        assertEquals(m1.get(1, 2), 23.0f);
+
+        assertEquals(m1.get(2, 0), 49.0f);
+        assertEquals(m1.get(2, 1), 57.0f);
+        assertEquals(m1.get(2, 2), 38.0f);
+
+    }
 }
