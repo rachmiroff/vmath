@@ -85,7 +85,11 @@ public class Mat2Test {
         };
         var matrix = new Mat2(array);
         var mArr = matrix.toArray();
-
+    
+        for (int i = 0; i < array.length; i++) {
+            assertEquals(array[i], mArr[i]);
+        }
+        
         mArr[0] = 10;
         assertEquals(0.0f, matrix.toArray()[0]);
         assertEquals(3.0f, matrix.toArray()[3]);
