@@ -51,4 +51,26 @@ public class Mat4 {
     public float get(int i, int j) {
         return m[i * 4 + j];
     }
-}
+
+    @Override
+    public String toString() {
+        String aString = "{";
+        for(int row = 0; row < 4; row++) {
+            if(row != 0) {
+                aString += ", "; 
+            }
+            aString += "(";
+            for(int col = 0; col < 4; col++) {
+                if(col != 0 ){
+                    aString+=", ";
+                }
+                aString += m[row * 4 + col];
+
+            }
+            aString += ")";
+        }
+        aString+="}";
+        
+        return aString;
+    }
+ }
