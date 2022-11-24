@@ -76,4 +76,18 @@ public class Mat2Test {
         assertThrows(ArithmeticException.class, () -> new Mat2(new float[] { 0.0f, 0.0f, Float.NaN, 0.0f }));
         assertThrows(ArithmeticException.class, () -> new Mat2(new float[] { 0.0f, 0.0f, 0.0f, Float.NaN }));
     }
+
+    @Test
+    void converts_matrix_to_array_of_floats() {
+        float[] array = {
+            0.0f, 1.0f,
+            2.0f, 3.0f,
+        };
+        var matrix = new Mat2(array);
+        var mArr = matrix.toArray();
+
+        mArr[0] = 10;
+        assertEquals(0.0f, matrix.toArray()[0]);
+        assertEquals(3.0f, matrix.toArray()[3]);
+    }
 }
