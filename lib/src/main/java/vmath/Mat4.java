@@ -51,4 +51,8 @@ public class Mat4 {
     public float get(int i, int j) {
         return m[i * 4 + j];
     }
+
+    public float[] toArray() {
+        return m.clone();
+    }
 }
