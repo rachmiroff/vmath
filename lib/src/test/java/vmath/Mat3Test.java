@@ -103,4 +103,25 @@ public class Mat3Test {
             assertThrows(ArithmeticException.class, () -> new Mat3(vals));
         }
     }
+
+    @Test
+    void creates_transpose_of_a_matrix_with_args() {
+        var m = new Mat3(
+                1.0f,  2.0f,  3.0f,
+                4.0f,  5.0f,  6.0f,
+                7.0f,  8.0f,  9.0f
+        );
+
+        assertEquals(m.transpose(0, 0), 1.0f);
+        assertEquals(m.transpose(0, 1), 4.0f);
+        assertEquals(m.transpose(0, 2), 7.0f);
+
+        assertEquals(m.transpose(1, 0), 2.0f);
+        assertEquals(m.transpose(1, 1), 5.0f);
+        assertEquals(m.transpose(1, 2), 8.0f);
+
+        assertEquals(m.transpose(2, 0), 3.0f);
+        assertEquals(m.transpose(2, 1), 6.0f);
+        assertEquals(m.transpose(2, 2), 9.0f);
+    }
 }
