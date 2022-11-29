@@ -44,6 +44,6 @@ public class Mat2 {
     }
 
     public float transpose(int i, int j) {
-        return 0;
+        return m[j * 2 + i];
     }
 }
