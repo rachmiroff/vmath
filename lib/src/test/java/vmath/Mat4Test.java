@@ -1,9 +1,8 @@
 package vmath;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class Mat4Test {
     @Test
@@ -130,5 +129,38 @@ public class Mat4Test {
             vals[i] = Float.NaN;
             assertThrows(ArithmeticException.class, () -> new Mat4(vals));
         }
+    }
+
+    @Test
+    void get_an_element_for_the_given_indices() {
+
+        int i, j;
+
+        var m = new Mat4(
+                1.0f,  2.0f,  3.0f,  4.0f,
+                5.0f,  6.0f,  7.0f,  8.0f,
+                9.0f,  10.0f, 11.0f, 12.0f,
+                13.0f, 14.0f, 15.0f, 16.0f
+        );
+
+        i = 1;
+        j = 2;
+
+        assertEquals(m.get(i, j), 7.0f);
+
+        i = 3;
+        j = 1;
+
+        assertEquals(m.get(i, j), 14.0f);
+
+        i = 0;
+        j = 3;
+
+        assertEquals(m.get(i, j), 4.0f);
+
+        i = 2;
+        j = 0;
+
+        assertNotEquals(m.get(j, i), 9.0f);
     }
 }

@@ -49,6 +49,7 @@ public class Mat4 {
     }
 
     public float get(int i, int j) {
-        return m[i * 4 + j];
+        var index = i * 4 + j;
+        return m[index];
     }
 }
