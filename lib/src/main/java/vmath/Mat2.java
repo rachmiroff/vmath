@@ -42,4 +42,9 @@ public class Mat2 {
     public float get(int i, int j) {
         return m[i * 2 + j];
     }
+
+    public Vec2 mul(Vec2 other){
+       // TODO
+        return null;
+    }
 }

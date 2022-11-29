@@ -76,4 +76,30 @@ public class Mat2Test {
         assertThrows(ArithmeticException.class, () -> new Mat2(new float[] { 0.0f, 0.0f, Float.NaN, 0.0f }));
         assertThrows(ArithmeticException.class, () -> new Mat2(new float[] { 0.0f, 0.0f, 0.0f, Float.NaN }));
     }
+
+    @Test
+    void multiplies_vector_by_matrix() {
+        Vec2 v1 = new Vec2(1.0f,2.0f);
+        Mat2 m1 = new Mat2(
+                1.0f, 2.0f,
+                3.0f, 4.0f
+        );
+
+        Vec2 prod1 = m1.mul(v1);
+
+        assertEquals(prod1.x(), 5.0f);
+        assertEquals(prod1.y(), 11.0f);
+
+
+        Vec2 v2 = new Vec2(1.0f,0.0f);
+        Mat2 m2 = new Mat2(
+                5.0f, 6.0f,
+                7.0f, 8.0f
+        );
+
+        Vec2 prod2 = m2.mul(v2);
+
+        assertEquals(prod2.x(), 5.0f);
+        assertEquals(prod2.y(), 7.0f);
+    }
 }
