@@ -54,6 +54,7 @@ public class Mat4 {
 
     public Mat4 mul(Mat4 other){
         return new Mat4(
+            
             (m[0 * 4 + 0] * other.m[0 * 4 + 0]) + (m[0 * 4 + 1] * other.m[1 * 4 + 0]) + (m[0 * 4 + 2] * other.m[2 * 4 + 0]),
             (m[0 * 4 + 0] * other.m[0 * 4 + 1]) + (m[0 * 4 + 1] * other.m[1 * 4 + 1]) + (m[0 * 4 + 2] * other.m[2 * 4 + 1]),
             (m[0 * 4 + 0] * other.m[0 * 4 + 2]) + (m[0 * 4 + 1] * other.m[1 * 4 + 2]) + (m[0 * 4 + 2] * other.m[2 * 4 + 2]),
