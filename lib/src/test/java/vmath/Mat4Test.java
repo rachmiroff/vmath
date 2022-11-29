@@ -131,4 +131,38 @@ public class Mat4Test {
             assertThrows(ArithmeticException.class, () -> new Mat4(vals));
         }
     }
+
+
+    @Test
+    void transposes_the_matrix(){
+        var m = new Mat4 (
+                1.0f,  2.0f,  3.0f,  4.0f,
+                5.0f,  6.0f,  7.0f,  8.0f,
+                9.0f,  10.0f, 11.0f, 12.0f,
+                13.0f, 14.0f, 15.0f, 16.0f
+        );
+
+
+        assertEquals(m.transpose(0, 0), 1.0f);
+        assertEquals(m.transpose(0, 1), 5.0f);
+        assertEquals(m.transpose(0, 2), 9.0f);
+        assertEquals(m.transpose(0, 3), 13.0f);
+
+        assertEquals(m.transpose(1, 0), 2.0f);
+        assertEquals(m.transpose(1, 1), 6.0f);
+        assertEquals(m.transpose(1, 2), 10.0f);
+        assertEquals(m.transpose(1, 3), 14.0f);
+
+        assertEquals(m.transpose(2, 0), 3.0f);
+        assertEquals(m.transpose(2, 1), 7.0f);
+        assertEquals(m.transpose(2, 2), 11.0f);
+        assertEquals(m.transpose(2, 3), 15.0f);
+
+        assertEquals(m.transpose(3, 0), 4.0f);
+        assertEquals(m.transpose(3, 1), 8.0f);
+        assertEquals(m.transpose(3, 2), 12.0f);
+        assertEquals(m.transpose(3, 3), 16.0f);
+
+
+    }
 }
