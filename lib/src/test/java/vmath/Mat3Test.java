@@ -1,9 +1,8 @@
 package vmath;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class Mat3Test {
     @Test
@@ -102,5 +101,32 @@ public class Mat3Test {
             vals[i] = Float.NaN;
             assertThrows(ArithmeticException.class, () -> new Mat3(vals));
         }
+    }
+
+    @Test
+    void get_an_element_for_the_given_indices() {
+
+        int i, j;
+
+        var m = new Mat3(
+                1.0f,  2.0f,  3.0f,
+                4.0f,  5.0f,  6.0f,
+                7.0f,  8.0f,  9.0f
+        );
+
+        i = 0;
+        j = 1;
+
+        assertEquals(m.get(i, j), 2.0f);
+
+        i = 2;
+        j = 0;
+
+        assertEquals(m.get(i, j), 7.0f);
+
+        i = 1;
+        j = 2;
+
+        assertNotEquals(m.get(j, i), 6.0f);
     }
 }
