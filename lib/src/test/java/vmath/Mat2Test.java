@@ -76,4 +76,18 @@ public class Mat2Test {
         assertThrows(ArithmeticException.class, () -> new Mat2(new float[] { 0.0f, 0.0f, Float.NaN, 0.0f }));
         assertThrows(ArithmeticException.class, () -> new Mat2(new float[] { 0.0f, 0.0f, 0.0f, Float.NaN }));
     }
+
+    @Test
+     void transposes_the_matrix(){
+         var m = new Mat2 (
+                 1.0f,  2.0f,
+                 3.0f,  4.0f
+         );
+
+         assertEquals(m.transpose(0, 0), 1.0f);
+         assertEquals(m.transpose(0, 1), 3.0f);
+
+         assertEquals(m.transpose(1, 0), 2.0f);
+         assertEquals(m.transpose(1, 1), 4.0f);
+     }
 }
