@@ -44,7 +44,9 @@ public class Mat2 {
     }
 
     public Vec2 mul(Vec2 other){
-       // TODO
-        return null;
+        return new Vec2(
+            get(0,0) * other.x() + get(0,1) * other.y(),
+            get(1,0) * other.x() + get(1,1) * other.y()
+        );
     }
 }
