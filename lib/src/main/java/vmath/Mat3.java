@@ -51,6 +51,6 @@ public class Mat3 {
 
 
     public float transpose(int i, int j) {
-        return 0;
+        return m[i + j * 3];
     }
 }
