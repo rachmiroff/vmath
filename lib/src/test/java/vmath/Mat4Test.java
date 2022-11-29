@@ -131,4 +131,71 @@ public class Mat4Test {
             assertThrows(ArithmeticException.class, () -> new Mat4(vals));
         }
     }
+
+    @Test
+    void multiplication_of_two_matrices() {
+        var val1 = new Mat4(
+            1.0f,  2.0f,  3.0f,  4.0f,
+            5.0f,  6.0f,  7.0f,  8.0f,
+            9.0f,  10.0f, 11.0f, 12.0f,
+            13.0f, 14.0f, 15.0f, 16.0f
+        );
+        var val2 = new Mat4(
+            1.0f,  2.0f,  3.0f,  4.0f,
+            5.0f,  6.0f,  7.0f,  8.0f,
+            9.0f,  10.0f, 11.0f, 12.0f,
+            13.0f, 14.0f, 15.0f, 16.0f
+        );
+        var val3 = new Mat4(
+            1.0f,  2.0f,  3.0f,  4.0f,
+            5.0f,  6.0f,  7.0f,  8.0f,
+            9.0f,  10.0f, 11.0f, 12.0f,
+            13.0f, 14.0f, 15.0f, 16.0f
+        );
+
+        var m = val1.mul(val2);
+
+        assertEquals(m.get(0, 0), 38.0f);
+        assertEquals(m.get(0, 1), 44.0f);
+        assertEquals(m.get(0, 2), 50.0f);
+        assertEquals(m.get(0, 3), 56.0f);
+
+        assertEquals(m.get(1, 0), 98.0f);
+        assertEquals(m.get(1, 1), 116.0f);
+        assertEquals(m.get(1, 2), 134.0f);
+        assertEquals(m.get(1, 3), 152.0f);
+
+        assertEquals(m.get(2, 0), 158.0f);
+        assertEquals(m.get(2, 1), 188.0f);
+        assertEquals(m.get(2, 2), 218.0f);
+        assertEquals(m.get(2, 3), 248.0f);
+
+        assertEquals(m.get(3, 0), 278.0f);
+        assertEquals(m.get(3, 1), 320.0f);
+        assertEquals(m.get(3, 2), 362.0f);
+        assertEquals(m.get(3, 3), 404.0f);
+
+        var m1 = val1.mul(val3);
+
+        assertEquals(m1.get(0, 0), 38.0f);
+        assertEquals(m1.get(0, 1), 44.0f);
+        assertEquals(m1.get(0, 2), 50.0f);
+        assertEquals(m1.get(0, 3), 56.0f);
+
+        assertEquals(m1.get(1, 0), 98.0f);
+        assertEquals(m1.get(1, 1), 116.0f);
+        assertEquals(m1.get(1, 2), 134.0f);
+        assertEquals(m1.get(1, 3), 152.0f);
+
+        assertEquals(m1.get(2, 0), 158.0f);
+        assertEquals(m1.get(2, 1), 188.0f);
+        assertEquals(m1.get(2, 2), 218.0f);
+        assertEquals(m1.get(2, 3), 248.0f);
+
+        assertEquals(m.get(3, 0), 278.0f);
+        assertEquals(m.get(3, 1), 320.0f);
+        assertEquals(m.get(3, 2), 362.0f);
+        assertEquals(m.get(3, 3), 404.0f);
+
+    }
 }
